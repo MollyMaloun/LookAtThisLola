@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc.test</title>
+</head>
+<body>
+    <input type="number" id="first_number" />
+    
+    <div id="operator_buttons">
+    <button id="plus" class="operator" onclick="operations='+'">+</button>
+    <button id="minus" class="operator" onclick="operations='-'">-</button>
+    <button id="multiply" class="operator" onclick="operations='*'">*</button>
+    <button id="divide" class="operator" onclick="operations='/'">/</button>
+
+<br>
+    <input type="number" id="second_number" />
+
+    <button onclick="func ()">=</button>
+    <p id="result"></p>
+
+    <script>
+        var operations;
+        function func()
+         {
+        var first_number = Number(document.getElementById("first_number").value);
+        var second_number = Number(document.getElementById("second_number").value);
+        var result;
+        
+        switch (operations)
+        {
+            case "+":
+                result = first_number + second_number;
+                break;
+            case "-":
+                result = first_number - second_number;
+                break;
+            case "*":
+                result = first_number * second_number;
+                break;
+            case "/":
+                if (second_number == 0)
+                {
+                    result = "ахахах";
+                }
+                else
+                {
+                    result = first_number / second_number;
+                }
+            break;
+            default:
+                result = "Введите число";
+            break;
+        }
+        document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
